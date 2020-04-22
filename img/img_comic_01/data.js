@@ -1,0 +1,6 @@
+const imgBig =[
+  
+]
+const imgLittle =[
+  
+]
