@@ -50,6 +50,7 @@ body {
 .carousel-cell img {
   display: block;
   margin: auto;
+  height: 100%;
   max-width: 90%;
   max-height: 100%;
 }
