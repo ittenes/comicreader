@@ -26,7 +26,7 @@ body {
 
 .carousel {
   background: rgba(0, 0, 0, 0.7);
-  height: 90%;
+  height: 95%;
 }
 
 .carousel-cell {
@@ -61,7 +61,7 @@ body {
 /* BUTTONS TOP */
 .flickity-viewport {
   overflow: hidden;
-  position: unset;
+
   height: 100%;
 }
 
