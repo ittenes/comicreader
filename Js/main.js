@@ -1,23 +1,39 @@
 
-  const createComic = ()=> {
+  const createComicLittle = ()=> {
     document.getElementById("pages").innerHTML = `<div
     class="carousel carousel-nav"
     data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }'
     > ` + 
-    imgBig.map((element, index) => {
+    imgLittle.map((element, index) => {
       index = index +1
       if(index < 10 ) { index = `0${index}`}
       console.log(imgBig)
       return(`<div key=${index} class="carousel-cell">
-            <img src=${element} alt="pagian ${index}" />
+            <img src=${element} alt="página ${index}" />
             <br />
             <p class="number">${index}</p>
           </div>`
       )  
     }).join('') + ` </div>`
   }
-  
-  createComic()
+
+  const createComicBig= ()=> {
+    document.getElementById("comicBig").innerHTML = ` ` + 
+    imgBig.map((element, index) => {
+      index = index +1
+      if(index < 10 ) { index = `0${index}`}
+      console.log( `<div key=${index} class="carousel-cell">
+      <img src=${element} alt="página ${index}" />
+    </div>`)
+      return(`<div key=${index} class="carousel-cell">
+            <img src=${element} alt="página ${index}" />
+          </div>`
+      )  
+    }).join('')
+
+  }
+createComicBig();
+createComicLittle();
 
 window.onload = ()=> {
 
@@ -37,10 +53,11 @@ window.onload = ()=> {
   btn_pages.addEventListener("click", () => {
     if (pages.classList.contains('pages-hidden') ){
       pages.className = "pages-view";  
-      iconPages.className -= "active"; 
+      iconPages.className = "sprite-pages icons-menu active-icon"; 
      
     } else {
-      iconPages.className += "active";  
+      pages.className = "pages-hidden";  
+      iconPages.className = "sprite-pages icons-menu";  
     }
   });
 

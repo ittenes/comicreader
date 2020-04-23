@@ -1,4 +1,5 @@
-const imgBig =[
+
+const imgLittle =[
   './img/comic/01.jpg',
   './img/comic/02.jpg',
   './img/comic/03.jpg',
@@ -12,7 +13,8 @@ const imgBig =[
   './img/comic/11.jpg',
   './img/comic/12.jpg',
 ]
-const imgLittle =[
+
+const imgBig =[
   './img/comic/01.jpg',
   './img/comic/02.jpg',
   './img/comic/03.jpg',

@@ -172,7 +172,7 @@ body {
   position: relative;
   top: 8px;
 }
-.icons-menu .active {
+.active-icon {
   background-position-y: bottom;
 }
 
