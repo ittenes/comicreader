@@ -50,7 +50,6 @@ body {
 .carousel-cell img {
   display: block;
   margin: auto;
-  height: 100%;
   max-width: 90%;
   max-height: 100%;
 }
@@ -89,13 +88,13 @@ body {
 
 /* NAV */
 .carousel-nav {
-  rheight: 114px;
+  height: 151px;
   min-width: 360px;
   background: transparent;
 }
 
 .carousel-nav .carousel-cell {
-  height: 131px;
+  height: 151;
   width: 93px;
   background: transparent;
   margin-top: 10px;
