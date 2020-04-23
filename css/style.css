@@ -52,7 +52,6 @@ body {
   margin: auto;
   max-width: 90%;
   max-height: 100%;
-  vertical-align: middle;
 }
 .carousel-cell .number {
   margin-top: -11px;
@@ -108,7 +107,6 @@ body {
 
 .carousel-nav .carousel-cell.is-nav-selected {
   background: #ed2;
-  border
 }
 .carousel-nav img {
   width: auto;
@@ -160,9 +158,44 @@ body {
   text-align: center;
   cursor: pointer;
 }
-.counter{
-margin: 0px 15px;
+.counter {
+  margin: 0px 15px;
 }
+
+.icons-menu {
+  max-height: 34px;
+  display: inline-block;
+  background-size: 25px 50px;
+  background-position-y: top;
+  height: 25px;
+  width: 25px;
+  position: relative;
+  top: 8px;
+}
+.icons-menu .active {
+  background-position-y: bottom;
+}
+
+.sprite-pages {
+  background-image: url('../img/dc-comic-pages-button.png');
+}
+.sprite-two-pages {
+  background-image: url('../img/dc-comic-twopage-button.png');
+}
+.sprite-zoom {
+  background-image: url('../img/dc-comic-zoom-button.png');
+}
+.title {
+  width: 50%;
+}
+.title-comic {
+  padding: 0 10px;
+  width: 60%;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .button {
   background-color: #e7e7e7;
   opacity: 0.7;
@@ -192,6 +225,7 @@ margin: 0px 15px;
   padding: 5px;
   overflow: hidden;
   height: 125px;
+  transition-property: heght top transform -webkit-transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
 }
-
-

@@ -54,7 +54,7 @@
     </div>
 
     <!-- nav -->
-    <div class="pages-view">
+    <div id="pages" class="pages-hidden">
       <div
         class="carousel carousel-nav"
         data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }'
@@ -101,29 +101,33 @@
 
     <div class="menu">
       <div class="item">
-        <div class="counter">
+        <div id="counterNumber" class="counter">
           Pagnia 1 de 24
         </div>
       </div>
-      <div class="item">
-        AMPLIAR
+      <div id="btn_pages" class="item">
+        <span id="icon-pages" class="sprite-pages icons-menu" />
       </div>
       <div class="item">
-        PAGINA DOBLE DOBLE
+        <span class="sprite-two-pages icons-menu active"></span>
       </div>
       <div class="item">
-        <div>
-          NOMBRE DE COMIC
-        </div>
+        <span class="sprite-zoom icons-menu"></span>
+      </div>
+      <div class="item title">
+        <span class="title-comic">
+          NOMBRE DEL COMIC ASFAV ADVAD F AF ASDF
+        </span>
       </div>
       <div class="item">
-        <div>
-          LOGO DE EMPRESA
+        <div class="item">
+          <span class="sprite-zoom icons-menu"></span>
         </div>
       </div>
     </div>
 
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="./img/comic/data.js"></script>
     <script src="./Js/main.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   </body>
 </html>

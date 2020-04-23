@@ -1,6 +1,0 @@
-const imgBig =[
-  
-]
-const imgLittle =[
-  
-]
