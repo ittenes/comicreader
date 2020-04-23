@@ -94,8 +94,8 @@ body {
 }
 
 .carousel-nav .carousel-cell {
-  height: 90px;
-  width: 60px;
+  height: 131px;
+  width: 93px;
   background: transparent;
   margin-top: 10px;
 }
@@ -224,7 +224,7 @@ body {
   border-top: 1px solid #454545;
   padding: 5px;
   overflow: hidden;
-  height: 125px;
+  height: 173px;
   transition-property: heght top transform -webkit-transform;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
