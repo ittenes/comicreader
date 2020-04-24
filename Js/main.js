@@ -108,14 +108,16 @@ window.onload = () => {
           const bgPhoto = () => {
             document.getElementById(
               newIndexBg
-            ).innerHTML = ` <div class="containerDouble">
+            ).innerHTML = ` <div class="container-double">
+            <div class="wrapperDouble">
             <img class="imagen01" 
-            style=" float: left;
-              max-width: 45%;
-              margin-left: 5%;" 
             src="${imgBig[index + index - 2]}" alt="página " />
-            <img class="imagen02" style="max-width: 45%;
-            margin-left: 0%;" src="${imgBig[index + index - 1]}" alt="página "/>
+            </div>
+            <div class="wrapperDouble">
+            <img class="imagen02" src="${
+              imgBig[index + index - 1]
+            }" alt="página "/>
+            </div>
           </div>
           `;
             document.getElementById(newIndexBg).style.width = '200px';
@@ -125,6 +127,8 @@ window.onload = () => {
           var elemBg = document.getElementById(newIndexBg);
           elemBg.parentNode.removeChild(elemBg);
         }
+        var flktyMain = new Flickity('.carousel-main');
+        flktyMain.reposition();
       });
 
       //creation de double page with Little Data
@@ -139,12 +143,16 @@ window.onload = () => {
           const ltPhoto = () => {
             document.getElementById(
               newIndexLt
-            ).innerHTML = ` <div class="containerDouble">
-            <img class="imagen01"  
-            src="${imgBig[index + index - 2]}" alt="página " />
-            <img class="imagen02" src="${
-              imgBig[index + index - 1]
-            }" alt="página "/>
+            ).innerHTML = ` <div class="container-double">
+            <div class="wrapperDouble">
+              <img class="imagen01"  
+              src="${imgBig[index + index - 2]}" alt="página " />
+            </div>
+            <div class="wrapperDouble">
+              <img class="imagen02" src="${
+                imgBig[index + index - 1]
+              }" alt="página "/>
+            </div>
           </div>
           `;
           };

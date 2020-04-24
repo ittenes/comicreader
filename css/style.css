@@ -238,11 +238,7 @@ body {
 }
 
 /* DOUBLE */
-.containerDouble {
-  max-width: 100%;
-}
-
-#comicBig .containerDouble {
+.container-double {
   width: 100%;
   display: flex;
   align-items: center;
@@ -251,17 +247,24 @@ body {
 .containerDouble img {
   width: auto;
 }
+.wrapperDouble {
+  width: 50%;
+  height: 100%;
+}
 
 #comicBig .imagen01 {
-  max-width: 660px;
-  margin: 0px;
-  height: auto;
+  margin: 0px 0px 0px auto;
 }
 
 #comicBig .imagen02 {
-  max-width: 660px;
-  margin: 0px;
-  height: auto;
+  margin: 0px auto 0px 0px;
+}
+#pages .imagen01 {
+  margin: 0px 0px 0px auto;
+}
+
+#pages .imagen02 {
+  margin: 0px auto 0px 0px;
 }
 /*  ZOOM */
 
