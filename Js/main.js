@@ -133,6 +133,7 @@ window.onload = () => {
           elemBg.parentNode.removeChild(elemBg);
         }
         var flktyMain = new Flickity('.carousel-main');
+        flktyMain.resize();
         flktyMain.reposition();
       });
 
@@ -168,6 +169,7 @@ window.onload = () => {
         }
         //TODO necesito recargar el menu pero no se como
         var flktyNav = new Flickity('.carousel-nav');
+        flktyNav.resize();
         flktyNav.reposition();
       });
     } else {
