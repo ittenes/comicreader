@@ -211,9 +211,10 @@ body {
 
 /* CONTROL PAGES */
 .pages-hidden {
-  bottom: -100px;
+  bottom: 300px;
   opacity: 0;
   visibility: hidden;
+  display: none;
 }
 .pages-view {
   z-index: 3;
@@ -228,4 +229,37 @@ body {
   transition-property: heght top transform -webkit-transform;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
+}
+
+/* DOUBLE */
+.containerDouble {
+  max-height: 100%;
+}
+.imagen01 {
+  float: left;
+  max-width: 45%;
+  margin-left: 5%;
+}
+.imagen02 {
+  max-width: 45%;
+  margin-left: 0%;
+}
+
+/*  ZOOM */
+.containerZoom01 {
+  position: absolute;
+  left: 25%;
+  right: 25%;
+
+  top: 0px;
+}
+
+.containerZoom img {
+  max-width: 100%;
+}
+
+@media (max-width: 767px) {
+  .no-show {
+    display: none;
+  }
 }

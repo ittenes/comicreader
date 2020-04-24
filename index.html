@@ -20,7 +20,9 @@
       data-flickity='{ "setGallerySize": false, "pageDots": false }'
     >
       <div class="carousel-cell">
-        <img src="img/Page_09.jpg" alt="orange tree" />
+        <div>
+          <img class="" src="img/Page_09.jpg" alt="orange tree" />
+        </div>
       </div>
       <div class="carousel-cell">
         <img src="img/Page_09.jpg" alt="orange tree" />
@@ -53,9 +55,9 @@
         <img src="img/Page_09.jpg" alt="orange tree" />
       </div>
     </div>
-
+    <div id="zoom" class=""></div>
     <!-- nav -->
-    <div id="pages" class="pages-hidden">
+    <div id="pages" class="pages-view">
       <div
         class="carousel carousel-nav"
         data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }'
@@ -101,18 +103,18 @@
     <!-- Buttons  -->
 
     <div class="menu">
-      <div class="item">
+      <div id="counter" class="item no-show">
         <div id="counterNumber" class="counter">
           Pagnia 1 de 24
         </div>
       </div>
-      <div id="btn_pages" class="item">
+      <div id="btnPages" class="item">
         <span id="icon-pages" class="sprite-pages icons-menu" />
       </div>
-      <div class="item">
+      <div id="btnDouble" class="item">
         <span class="sprite-two-pages icons-menu active"></span>
       </div>
-      <div class="item">
+      <div id="btnZoom" class="item no-show">
         <span class="sprite-zoom icons-menu"></span>
       </div>
       <div class="item">
