@@ -62,7 +62,7 @@ window.onload = () => {
     'counterNumber'
   ).innerHTML = `Página 1 de ${imgBig.length}`;
 
-  var flkty = new Flickity('.carousel');
+  var flkty = new Flickity('.carousel ');
 
   flkty.on('settle', function (index) {
     document.getElementById('counterNumber').innerHTML = `Página ${
@@ -105,7 +105,7 @@ window.onload = () => {
           const bgPhoto = () => {
             document.getElementById(
               newIndexBg
-            ).innerHTML = ` <div class"containerDouble">
+            ).innerHTML = ` <div class="containerDouble">
             <img class="imagen01" 
             style=" float: left;
               max-width: 45%;
@@ -117,7 +117,6 @@ window.onload = () => {
           `;
             document.getElementById(newIndexBg).style.width = '200px';
           };
-
           return bgPhoto();
         } else {
           var elemBg = document.getElementById(newIndexBg);
@@ -137,27 +136,24 @@ window.onload = () => {
           const ltPhoto = () => {
             document.getElementById(
               newIndexLt
-            ).innerHTML = ` <div class"containerDouble">
-            <img class="imagen01" 
-            style=" float: left;
-              max-width: 45%;
-              margin-left: 5%;" 
+            ).innerHTML = ` <div class="containerDouble">
+            <img class="imagen01"  
             src="${imgBig[index + index - 2]}" alt="página " />
-            <img class="imagen02" style="max-width: 45%;
-            margin-left: 0%;" src="${imgBig[index + index - 1]}" alt="página "/>
+            <img class="imagen02" src="${
+              imgBig[index + index - 1]
+            }" alt="página "/>
           </div>
           `;
           };
-
           return ltPhoto();
         } else {
           var elemLt = document.getElementById(newIndexLt);
           elemLt.parentNode.removeChild(elemLt);
         }
         //TODO necesito recargar el menu pero no se como
-        flkty.resize();
+        var flktyNav = new Flickity('.carousel-nav');
+        flktyNav.reposition();
       });
-      flkty.reloadCells();
     } else {
       // TODO - Create the simple page in the same way than DOUBLE
       location.reload();
