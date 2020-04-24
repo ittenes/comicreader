@@ -187,7 +187,9 @@ window.onload = () => {
       console.log(NewPagComicBig, sizeWindow, sizeWindowZoom);
       document.getElementById('zoom').className = 'containerZoom01';
       document.getElementById('zoom').innerHTML = `
-      <img id="imgZoom" style="height:${sizeWindow}px;" src="${imgBig[pagComicBig]}" alt="zoom" />
+      <img id="imgZoom" style="height:${sizeWindow}px;" src="${
+        imgBig[pagComicBig - 1]
+      }" alt="zoom" />
       `;
     } else {
       var elem = document.getElementById('imgZoom');
