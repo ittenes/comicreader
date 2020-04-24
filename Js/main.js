@@ -42,9 +42,10 @@ createComicLittle();
 
 let pagCommicBig = 0;
 
-let resizeW = () => {
+let resizeWindow = () => {
   console.log('estoy en ello');
-  window.resizeBy(0, 100);
+
+  window.resizeBy(-10, -10);
 };
 
 window.onload = () => {
@@ -62,6 +63,7 @@ window.onload = () => {
   ).innerHTML = `Página 1 de ${imgBig.length}`;
 
   var flkty = new Flickity('.carousel');
+
   flkty.on('settle', function (index) {
     document.getElementById('counterNumber').innerHTML = `Página ${
       index + 1
@@ -152,9 +154,10 @@ window.onload = () => {
           var elemLt = document.getElementById(newIndexLt);
           elemLt.parentNode.removeChild(elemLt);
         }
-        //TODO I need resize but "resizeW" is not working I dont know why
-        resizeW();
+        //TODO necesito recargar el menu pero no se como
+        flkty.resize();
       });
+      flkty.reloadCells();
     } else {
       // TODO - Create the simple page in the same way than DOUBLE
       location.reload();
