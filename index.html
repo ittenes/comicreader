@@ -11,6 +11,11 @@
       href="https://unpkg.com/flickity@2/dist/flickity.min.css"
     />
     <link rel="stylesheet" href="./css/style.css" />
+    <script>
+      function resizeWindow() {
+        window.resizeBy(100, 100);
+      }
+    </script>
   </head>
   <body>
     <!-- Flickity HTML init -->
@@ -118,7 +123,7 @@
         <span class="sprite-zoom icons-menu"></span>
       </div>
       <div class="item">
-        <span class="title-comic">
+        <span class="title-comic" onclick="resizeWindow()">
           NOMBRE DEL COMIC ASFAV ADVAD F AF ASDF
         </span>
       </div>

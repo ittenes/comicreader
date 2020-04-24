@@ -56,6 +56,7 @@ window.onload = () => {
   let count = 1;
   let countZoom = 1;
 
+  // COUNTER --- counter page of comic
   document.getElementById(
     'counterNumber'
   ).innerHTML = `Página 1 de ${imgBig.length}`;
@@ -69,6 +70,7 @@ window.onload = () => {
     pagComicBig = index + 1;
   });
 
+  // MENU SELECT PAGE -  Menu pages controls View-Hide
   btnPages.addEventListener('click', () => {
     if (pages.classList.contains('pages-hidden')) {
       pages.className = 'pages-view';
@@ -79,6 +81,7 @@ window.onload = () => {
     }
   });
 
+  // CREATION DE DOUBLE PAGE - create double list based in data
   btnDouble.addEventListener('click', () => {
     let numberImages = imgBig.length;
 
@@ -88,6 +91,7 @@ window.onload = () => {
       let newIndexBg;
       let newIndexLt;
 
+      //creation de double page with Big Data
       imgBig.map((element, index) => {
         index = index + 1;
         if (index < 10) {
@@ -119,6 +123,7 @@ window.onload = () => {
         }
       });
 
+      //creation de double page with Little Data
       imgLittle.map((element, index) => {
         index = index + 1;
         if (index < 10) {
@@ -147,13 +152,17 @@ window.onload = () => {
           var elemLt = document.getElementById(newIndexLt);
           elemLt.parentNode.removeChild(elemLt);
         }
+        //TODO I need resize but "resizeW" is not working I dont know why
+        resizeW();
       });
-      flkty.reposition();
     } else {
+      // TODO - Create the simple page in the same way than DOUBLE
       location.reload();
     }
   });
 
+  //  ZOOM CREATION FOR SIMPLE PAGE
+  //TODO create zoom for Double Page
   btnZoom.addEventListener('click', () => {
     let NewPagComicBig = pagComicBig + 1;
 
