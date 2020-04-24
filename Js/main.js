@@ -59,6 +59,11 @@ window.onload = () => {
   let count = 1;
   let countZoom = 1;
 
+  // BLOQUER BOTON DEERECHO
+  document.oncontextmenu = function () {
+    return false;
+  };
+
   // COUNTER --- counter page of comic
   document.getElementById(
     'counterNumber'
