@@ -53,6 +53,8 @@ window.onload = () => {
   let btnPages = document.getElementById('btnPages');
   let btnDouble = document.getElementById('btnDouble');
   let iconPages = document.getElementById('icon-pages');
+  let iconDouble = document.getElementById('icon-double');
+  let iconZoom = document.getElementById('icon-zoom');
   let pagComicBig = 0;
   let count = 1;
   let countZoom = 1;
@@ -89,6 +91,7 @@ window.onload = () => {
 
     console.log(count, numberImages / 2);
     if (count === 1) {
+      iconDouble.className = 'sprite-two-pages icons-menu active-icon';
       count = 0;
       let newIndexBg;
       let newIndexLt;
@@ -170,6 +173,7 @@ window.onload = () => {
     }
     if (countZoom === 1) {
       countZoom = 0;
+      iconZoom.className = 'sprite-zoom icons-menu active-icon';
       const sizeWindow = screen.height;
       const sizeWindowZoom = document.getElementById('zoom').width;
       console.log(NewPagComicBig, sizeWindow, sizeWindowZoom);
@@ -180,6 +184,7 @@ window.onload = () => {
     } else {
       var elem = document.getElementById('imgZoom');
       elem.parentNode.removeChild(elem);
+      iconZoom.className = 'sprite-zoom icons-menu';
       countZoom = 1;
     }
   });
