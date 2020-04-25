@@ -58,6 +58,9 @@ window.onload = () => {
   let pagComicBig = 0;
   let count = 1;
   let countZoom = 1;
+  var flkty = new Flickity('.carousel ');
+  var flktyMain = new Flickity('.carousel-main');
+  var flktyNav = new Flickity('.carousel-nav');
 
   // BLOQUER BOTON DEERECHO
   document.oncontextmenu = function () {
@@ -69,12 +72,10 @@ window.onload = () => {
     'counterNumber'
   ).innerHTML = `Página 1 de ${imgBig.length}`;
 
-  var flkty = new Flickity('.carousel ');
-
-  flkty.on('settle', function (index) {
+  flkty.on('change', function (index) {
     document.getElementById('counterNumber').innerHTML = `Página ${
       index + 1
-    } de ${imgBig.length}`;
+    } de ${flkty.cells.length}`;
 
     pagComicBig = index + 1;
   });
@@ -105,9 +106,9 @@ window.onload = () => {
       imgBig.map((element, index) => {
         index = index + 1;
         if (index < 10) {
-          newIndexBg = 'lt' + `0${index}`;
+          newIndexBg = 'bg' + `0${index}`;
         } else {
-          newIndexBg = 'lt' + index;
+          newIndexBg = 'bg' + index;
         }
         if (index <= Math.round(numberImages / 2)) {
           const bgPhoto = () => {
@@ -125,14 +126,16 @@ window.onload = () => {
             </div>
           </div>
           `;
-            document.getElementById(newIndexBg).style.width = '200px';
           };
           return bgPhoto();
         } else {
           var elemBg = document.getElementById(newIndexBg);
-          elemBg.parentNode.removeChild(elemBg);
+          console.log(elemBg);
+          //elemBg.parentNode.removeChild(elemBg);
+          flktyMain.remove(elemBg);
         }
-        var flktyMain = new Flickity('.carousel-main');
+        // Reload de carousel main
+
         flktyMain.resize();
         flktyMain.reposition();
       });
@@ -141,9 +144,9 @@ window.onload = () => {
       imgLittle.map((element, index) => {
         index = index + 1;
         if (index < 10) {
-          newIndexLt = 'bg' + `0${index}`;
+          newIndexLt = 'lt' + `0${index}`;
         } else {
-          newIndexLt = 'bg' + index;
+          newIndexLt = 'lt' + index;
         }
         if (index <= Math.round(numberImages / 2)) {
           const ltPhoto = () => {
@@ -152,23 +155,26 @@ window.onload = () => {
             ).innerHTML = ` <div class="container-double">
             <div class="wrapperDouble">
               <img class="imagen01"  
-              src="${imgBig[index + index - 2]}" alt="página " />
+              src="${imgLittle[index + index - 2]}" alt="página " />
             </div>
             <div class="wrapperDouble">
               <img class="imagen02" src="${
-                imgBig[index + index - 1]
+                imgLittle[index + index - 1]
               }" alt="página "/>
             </div>
           </div>
           `;
+            document.getElementById(newIndexLt).style.width = '200px';
           };
           return ltPhoto();
         } else {
           var elemLt = document.getElementById(newIndexLt);
-          elemLt.parentNode.removeChild(elemLt);
+          console.log(elemLt);
+          //elemLt.parentNode.removeChild(elemLt);
+          flktyNav.remove(elemLt);
         }
-        //TODO necesito recargar el menu pero no se como
-        var flktyNav = new Flickity('.carousel-nav');
+        // Reload de carousel Nav
+
         flktyNav.resize();
         flktyNav.reposition();
       });
