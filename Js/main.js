@@ -56,8 +56,9 @@ window.onload = () => {
   let iconDouble = document.getElementById('icon-double');
   let iconZoom = document.getElementById('icon-zoom');
   let pagComicBig = 0;
-  let count = 1;
+  let countDouble = 1;
   let countZoom = 1;
+  let indexPage = 0;
   var flkty = new Flickity('.carousel ');
   var flktyMain = new Flickity('.carousel-main');
   var flktyNav = new Flickity('.carousel-nav');
@@ -76,7 +77,7 @@ window.onload = () => {
     document.getElementById('counterNumber').innerHTML = `Página ${
       index + 1
     } de ${flkty.cells.length}`;
-
+    indexPage = index;
     pagComicBig = index + 1;
   });
 
@@ -95,10 +96,9 @@ window.onload = () => {
   btnDouble.addEventListener('click', () => {
     let numberImages = imgBig.length;
 
-    console.log(count, numberImages / 2);
-    if (count === 1) {
+    if (countDouble === 1) {
       iconDouble.className = 'sprite-two-pages icons-menu active-icon';
-      count = 0;
+      countDouble = 0;
       let newIndexBg;
       let newIndexLt;
 
@@ -130,7 +130,6 @@ window.onload = () => {
           return bgPhoto();
         } else {
           var elemBg = document.getElementById(newIndexBg);
-          console.log(elemBg);
           //elemBg.parentNode.removeChild(elemBg);
           flktyMain.remove(elemBg);
         }
@@ -169,7 +168,6 @@ window.onload = () => {
           return ltPhoto();
         } else {
           var elemLt = document.getElementById(newIndexLt);
-          console.log(elemLt);
           //elemLt.parentNode.removeChild(elemLt);
           flktyNav.remove(elemLt);
         }
@@ -193,20 +191,44 @@ window.onload = () => {
       NewPagComicBig = `0${NewPagComicBig}`;
     }
     if (countZoom === 1) {
-      countZoom = 0;
-      iconZoom.className = 'sprite-zoom icons-menu active-icon';
-      const sizeWindow = screen.height;
-      const sizeWindowZoom = document.getElementById('zoom').width;
-      console.log(NewPagComicBig, sizeWindow, sizeWindowZoom);
-      document.getElementById('zoom').className = 'containerZoom01';
-      document.getElementById('zoom').innerHTML = `
-      <img id="imgZoom" class="containerZoomImg containerZoomImgVis" style="height:${sizeWindow}px;" src="${imgBig[pagComicBig]}" alt="zoom" />
-      `;
+      if (countDouble === 1) {
+        countZoom = 0;
+        iconZoom.className = 'sprite-zoom icons-menu active-icon';
+        const sizeWindow = screen.height;
+        console.log(NewPagComicBig, sizeWindow);
+        document.getElementById('zoom').className = 'containerZoom01';
+        document.getElementById('zoom').innerHTML = `
+        <img id="imgZoom" class="containerZoomImg containerZoomImgVis" style="height:${sizeWindow}px;" src="${imgBig[pagComicBig]}" alt="zoom" />
+        `;
+      } else {
+        countZoom = 0;
+        iconZoom.className = 'sprite-zoom icons-menu active-icon';
+        const sizeWindow = screen.height;
+        console.log(NewPagComicBig, sizeWindow);
+        document.getElementById('zoom').className = 'containerZoom01';
+        document.getElementById('zoom').innerHTML = `
+        <img id="imgZoom01" class="containerZoomImg containerZoomImgVis" style="height:${sizeWindow}px;" src="${
+          imgBig[indexPage + indexPage]
+        }" alt="zoom" />
+        <img id="imgZoom02" class="containerZoomImg containerZoomImgVis" style="height:${sizeWindow}px;" src="${
+          imgLittle[indexPage + indexPage + 1]
+        }" alt="zoom" />
+        `;
+      }
     } else {
-      var elem = document.getElementById('imgZoom');
-      elem.parentNode.removeChild(elem);
-      iconZoom.className = 'sprite-zoom icons-menu';
-      countZoom = 1;
+      if (countDouble === 1) {
+        var elem = document.getElementById('imgZoom');
+        elem.parentNode.removeChild(elem);
+        iconZoom.className = 'sprite-zoom icons-menu';
+        countZoom = 1;
+      } else {
+        var elem01 = document.getElementById('imgZoom01');
+        var elem02 = document.getElementById('imgZoom02');
+        elem01.parentNode.removeChild(elem01);
+        elem02.parentNode.removeChild(elem02);
+        iconZoom.className = 'sprite-zoom icons-menu';
+        countZoom = 1;
+      }
     }
   });
 };
