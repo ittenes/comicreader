@@ -17,7 +17,7 @@ body {
 body {
   padding: 0;
   margin: 0;
-  overflow: hidden:
+  overflow: hidden;
 }
 
 body {
@@ -183,14 +183,24 @@ body {
   background-position-y: bottom;
 }
 
+#icon-logo {
+  margin-left: 15px;
+  background-size: 73px 26px;
+  height: 25px;
+  width: 73px;
+}
+
 .sprite-pages {
-  background-image: url('../img/dc-comic-pages-button.png');
+  background-image: url('../img/ecc-pages-button.png');
 }
 .sprite-two-pages {
-  background-image: url('../img/dc-comic-twopage-button.png');
+  background-image: url('../img/ecc-twopage-button.png');
 }
 .sprite-zoom {
-  background-image: url('../img/dc-comic-zoom-button.png');
+  background-image: url('../img/ecc-zoom-button.png');
+}
+.sprite-logo {
+  background-image: url('../img/ecc-logo.png');
 }
 .title {
   width: 50%;
