@@ -55,7 +55,7 @@ window.onload = () => {
   let iconPages = document.getElementById('icon-pages');
   let iconDouble = document.getElementById('icon-double');
   let iconZoom = document.getElementById('icon-zoom');
-  let pagComicBig = 0;
+  let pagComicBig = 1;
   let countDouble = 1;
   let countZoom = 1;
   let indexPage = 0;
@@ -198,7 +198,9 @@ window.onload = () => {
         console.log(NewPagComicBig, sizeWindow);
         document.getElementById('zoom').className = 'containerZoom01';
         document.getElementById('zoom').innerHTML = `
-        <img id="imgZoom" class="containerZoomImg containerZoomImgVis" style="height:${sizeWindow}px;" src="${imgBig[pagComicBig]}" alt="zoom" />
+        <img id="imgZoom" class="containerZoomImg containerZoomImgVis" style="height:${sizeWindow}px;" src="${
+          imgBig[pagComicBig - 1]
+        }" alt="zoom" />
         `;
       } else {
         countZoom = 0;
