@@ -216,7 +216,7 @@ window.onload = () => {
           imgBig[indexPage + indexPage]
         }" alt="zoom" />
         <img id="imgZoom02" class="containerZoomImg containerZoomImgVis" style="height:${sizeWindow}px;" src="${
-          imgLittle[indexPage + indexPage + 1]
+          imgBig[indexPage + indexPage + 1]
         }" alt="zoom" />
         `;
       }
