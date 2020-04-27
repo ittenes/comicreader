@@ -64,9 +64,9 @@ window.onload = () => {
   var flktyNav = new Flickity('.carousel-nav');
 
   // BLOQUER BOTON DEERECHO
-  document.oncontextmenu = function () {
-    return false;
-  };
+  // document.oncontextmenu = function () {
+  //   return false;
+  // };
 
   // COUNTER --- counter page of comic
   document.getElementById(
