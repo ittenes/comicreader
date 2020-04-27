@@ -1,6 +1,5 @@
-class ClassName {
-  constructor(ctx, numberZoom, image, pagComicBig, countDouble) {
-    this.ctx = ctx;
+class ZoomImages {
+  constructor(numberZoom, image, pagComicBig, countDouble) {
     this.countZoom = 0;
     this.countDouble = 0;
     this.image = image;
@@ -14,24 +13,41 @@ class ClassName {
     }
   }
 
-  createZoom() {
+  mangeZooms() {
     if (this.countZoom === 1) {
       if (countDouble === 1) {
-        this.countZoom = 0;
-        iconZoom.className = 'sprite-zoom icons-menu active-icon';
-        const sizeWindow = screen.height;
-        console.log(NewPagComicBig, sizeWindow);
-        document.getElementById('zoom').className = 'containerZoom01';
-        document.getElementById('zoom').innerHTML = `
-          <img id="imgZoom" class="containerZoomImg containerZoomImgVis" style="height:${sizeWindow}px;" src="${
-          imgBig[pagComicBig - 1]
-        }" alt="zoom" />
-          `;
+      } else {
+      }
+    } else {
+      if (countDouble === 1) {
+      } else {
+      }
+    }
+  }
+
+  deleteZoomDouble() {}
+  deleteZoomSimple() {}
+  createZoomDouble() {
+    this.countZoom = 0;
+    iconZoom.className = 'sprite-zoom icons-menu active-icon';
+    const sizeWindow = screen.height;
+    document.getElementById('zoom').className = 'containerZoom01';
+    document.getElementById('zoom').innerHTML = `
+      <img id="imgZoom01" class="containerZoomImg containerZoomImgVis" style="height:${sizeWindow}px;" src="${
+      imgBig[indexPage + indexPage]
+    }" alt="zoom" />
+      <img id="imgZoom02" class="containerZoomImg containerZoomImgVis" style="height:${sizeWindow}px;" src="${
+      imgLittle[indexPage + indexPage + 1]
+    }" alt="zoom" />
+      `;
+  }
+  createZoomSimple() {
+    if (this.countZoom === 1) {
+      if (countDouble === 1) {
       } else {
         this.countZoom = 0;
         iconZoom.className = 'sprite-zoom icons-menu active-icon';
         const sizeWindow = screen.height;
-        console.log(NewPagComicBig, sizeWindow);
         document.getElementById('zoom').className = 'containerZoom01';
         document.getElementById('zoom').innerHTML = `
           <img id="imgZoom01" class="containerZoomImg containerZoomImgVis" style="height:${sizeWindow}px;" src="${

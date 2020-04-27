@@ -63,6 +63,10 @@ window.onload = () => {
   var flktyMain = new Flickity('.carousel-main');
   var flktyNav = new Flickity('.carousel-nav');
 
+  // CLASS
+
+  let zoomImages = new ZoomImages();
+
   // BLOQUER BOTON DEERECHO
   // document.oncontextmenu = function () {
   //   return false;
@@ -185,52 +189,51 @@ window.onload = () => {
   //  ZOOM CREATION FOR SIMPLE PAGE
   //TODO create zoom for Double Page
   btnZoom.addEventListener('click', () => {
-    let NewPagComicBig = pagComicBig + 1;
-
-    if (NewPagComicBig < 10) {
-      NewPagComicBig = `0${NewPagComicBig}`;
-    }
-    if (countZoom === 1) {
-      if (countDouble === 1) {
-        countZoom = 0;
-        iconZoom.className = 'sprite-zoom icons-menu active-icon';
-        const sizeWindow = screen.height;
-        console.log(NewPagComicBig, sizeWindow);
-        document.getElementById('zoom').className = 'containerZoom01';
-        document.getElementById('zoom').innerHTML = `
-        <img id="imgZoom" class="containerZoomImg containerZoomImgVis" style="height:${sizeWindow}px;" src="${
-          imgBig[pagComicBig - 1]
-        }" alt="zoom" />
-        `;
-      } else {
-        countZoom = 0;
-        iconZoom.className = 'sprite-zoom icons-menu active-icon';
-        const sizeWindow = screen.height;
-        console.log(NewPagComicBig, sizeWindow);
-        document.getElementById('zoom').className = 'containerZoom01';
-        document.getElementById('zoom').innerHTML = `
-        <img id="imgZoom01" class="containerZoomImg containerZoomImgVis" style="height:${sizeWindow}px;" src="${
-          imgBig[indexPage + indexPage]
-        }" alt="zoom" />
-        <img id="imgZoom02" class="containerZoomImg containerZoomImgVis" style="height:${sizeWindow}px;" src="${
-          imgLittle[indexPage + indexPage + 1]
-        }" alt="zoom" />
-        `;
-      }
-    } else {
-      if (countDouble === 1) {
-        var elem = document.getElementById('imgZoom');
-        elem.parentNode.removeChild(elem);
-        iconZoom.className = 'sprite-zoom icons-menu';
-        countZoom = 1;
-      } else {
-        var elem01 = document.getElementById('imgZoom01');
-        var elem02 = document.getElementById('imgZoom02');
-        elem01.parentNode.removeChild(elem01);
-        elem02.parentNode.removeChild(elem02);
-        iconZoom.className = 'sprite-zoom icons-menu';
-        countZoom = 1;
-      }
-    }
+    // let NewPagComicBig = pagComicBig + 1;
+    // if (NewPagComicBig < 10) {
+    //   NewPagComicBig = `0${NewPagComicBig}`;
+    // }
+    // if (countZoom === 1) {
+    //   if (countDouble === 1) {
+    //     countZoom = 0;
+    //     iconZoom.className = 'sprite-zoom icons-menu active-icon';
+    //     const sizeWindow = screen.height;
+    //     console.log(NewPagComicBig, sizeWindow);
+    //     document.getElementById('zoom').className = 'containerZoom01';
+    //     document.getElementById('zoom').innerHTML = `
+    //     <img id="imgZoom" class="containerZoomImg containerZoomImgVis" style="height:${sizeWindow}px;" src="${
+    //       imgBig[pagComicBig - 1]
+    //     }" alt="zoom" />
+    //     `;
+    //   } else {
+    //     countZoom = 0;
+    //     iconZoom.className = 'sprite-zoom icons-menu active-icon';
+    //     const sizeWindow = screen.height;
+    //     console.log(NewPagComicBig, sizeWindow);
+    //     document.getElementById('zoom').className = 'containerZoom01';
+    //     document.getElementById('zoom').innerHTML = `
+    //     <img id="imgZoom01" class="containerZoomImg containerZoomImgVis" style="height:${sizeWindow}px;" src="${
+    //       imgBig[indexPage + indexPage]
+    //     }" alt="zoom" />
+    //     <img id="imgZoom02" class="containerZoomImg containerZoomImgVis" style="height:${sizeWindow}px;" src="${
+    //       imgLittle[indexPage + indexPage + 1]
+    //     }" alt="zoom" />
+    //     `;
+    //   }
+    // } else {
+    //   if (countDouble === 1) {
+    //     var elem = document.getElementById('imgZoom');
+    //     elem.parentNode.removeChild(elem);
+    //     iconZoom.className = 'sprite-zoom icons-menu';
+    //     countZoom = 1;
+    //   } else {
+    //     var elem01 = document.getElementById('imgZoom01');
+    //     var elem02 = document.getElementById('imgZoom02');
+    //     elem01.parentNode.removeChild(elem01);
+    //     elem02.parentNode.removeChild(elem02);
+    //     iconZoom.className = 'sprite-zoom icons-menu';
+    //     countZoom = 1;
+    //   }
+    // }
   });
 };
