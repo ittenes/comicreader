@@ -13,57 +13,46 @@ class ZoomImages {
     }
   }
 
-  mangeZooms() {
-    if (this.countZoom === 1) {
-      if (countDouble === 1) {
-      } else {
-      }
-    } else {
-      if (countDouble === 1) {
-      } else {
-      }
-    }
+  deleteZoomDouble() {}
+
+  deleteZoomSimple() {
+    var elem = document.getElementById('imgZoom');
+    elem.parentNode.removeChild(elem);
+    iconZoom.className = 'sprite-zoom icons-menu';
+    this.countZoom = 1;
   }
 
-  deleteZoomDouble() {}
-  deleteZoomSimple() {}
   createZoomDouble() {
     this.countZoom = 0;
     iconZoom.className = 'sprite-zoom icons-menu active-icon';
     const sizeWindow = screen.height;
     document.getElementById('zoom').className = 'containerZoom01';
     document.getElementById('zoom').innerHTML = `
-      <img id="imgZoom01" class="containerZoomImg containerZoomImgVis" style="height:${sizeWindow}px;" src="${
+          <img id="imgZoom01" class="containerZoomImg containerZoomImgVis" style="height:${sizeWindow}px;" src="${
       imgBig[indexPage + indexPage]
     }" alt="zoom" />
-      <img id="imgZoom02" class="containerZoomImg containerZoomImgVis" style="height:${sizeWindow}px;" src="${
+          <img id="imgZoom02" class="containerZoomImg containerZoomImgVis" style="height:${sizeWindow}px;" src="${
       imgLittle[indexPage + indexPage + 1]
     }" alt="zoom" />
-      `;
+          `;
   }
+
   createZoomSimple() {
     if (this.countZoom === 1) {
       if (countDouble === 1) {
-      } else {
         this.countZoom = 0;
         iconZoom.className = 'sprite-zoom icons-menu active-icon';
         const sizeWindow = screen.height;
         document.getElementById('zoom').className = 'containerZoom01';
         document.getElementById('zoom').innerHTML = `
-          <img id="imgZoom01" class="containerZoomImg containerZoomImgVis" style="height:${sizeWindow}px;" src="${
-          imgBig[indexPage + indexPage]
-        }" alt="zoom" />
-          <img id="imgZoom02" class="containerZoomImg containerZoomImgVis" style="height:${sizeWindow}px;" src="${
-          imgLittle[indexPage + indexPage + 1]
+          <img id="imgZoom" class="containerZoomImg containerZoomImgVis" style="height:${sizeWindow}px;" src="${
+          imgBig[pagComicBig - 1]
         }" alt="zoom" />
           `;
+      } else {
       }
     } else {
       if (countDouble === 1) {
-        var elem = document.getElementById('imgZoom');
-        elem.parentNode.removeChild(elem);
-        iconZoom.className = 'sprite-zoom icons-menu';
-        this.countZoom = 1;
       } else {
         var elem01 = document.getElementById('imgZoom01');
         var elem02 = document.getElementById('imgZoom02');
