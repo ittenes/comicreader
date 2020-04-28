@@ -40,7 +40,7 @@ body {
 
 #comicBig .carousel-cell {
   display: flex;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 /* cell number */
@@ -55,9 +55,9 @@ body {
 .carousel-cell img {
   display: block;
   margin: auto;
-  max-width: 90%;
-  max-height: 100%;
-  height: auto;
+  /*max-width: 90%;
+  max-height: 100%;*/
+  width: 36%;
 }
 .carousel-cell .number {
   margin-top: -11px;
@@ -65,9 +65,9 @@ body {
 
 /* BUTTONS TOP */
 .flickity-viewport {
-  overflow: hidden;
+  overflow-y: auto;
 
-  height: 100%;
+  /*height: 100%;*/
 }
 
 .flickity-button {
@@ -302,7 +302,6 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .containerZoom01 img {
@@ -348,4 +347,9 @@ body {
   .no-show-mobile {
     display: none;
   }
+}
+
+.carousel-cell img{
+  transition: width 2s, height 2s;
+  animation-timing-function: linear;
 }
