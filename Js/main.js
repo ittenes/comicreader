@@ -37,7 +37,9 @@ const createComicBig = () => {
       })
       .join('');
 };
+
 createComicBig();
+
 createComicLittle();
 
 let pagCommicBig = 0;
@@ -59,8 +61,10 @@ window.onload = () => {
   let countDouble = 1;
   let countZoom = 1;
   let indexPage = 0;
+
+  /////////////
   var flkty = new Flickity('.carousel ');
-  var flktyMain = new Flickity('.carousel-main');
+  var flktyMain = new Flickity('.carousel-main', { lazyLoad: true });
   var flktyNav = new Flickity('.carousel-nav');
 
   // CLASS
@@ -84,6 +88,8 @@ window.onload = () => {
     indexPage = index;
     pagComicBig = index + 1;
   });
+
+  // SPINNER
 
   // MENU SELECT PAGE -  Menu pages controls View-Hide
   btnPages.addEventListener('click', () => {
@@ -121,10 +127,12 @@ window.onload = () => {
             ).innerHTML = ` <div class="container-double">
             <div class="wrapperDouble">
             <img class="imagen01" 
-            src="${imgBig[index + index - 2]}" alt="página " />
+            data-flickity-lazyload="${
+              imgBig[index + index - 2]
+            }" alt="página " />
             </div>
             <div class="wrapperDouble">
-            <img class="imagen02" src="${
+            <img class="imagen02" data-flickity-lazyload="${
               imgBig[index + index - 1]
             }" alt="página "/>
             </div>
@@ -228,8 +236,8 @@ window.onload = () => {
         countZoom = 1;
       } else {
         var elem01 = document.getElementById('imgZoom01');
-        var elem02 = document.getElementById('imgZoom02');
         elem01.parentNode.removeChild(elem01);
+        var elem02 = document.getElementById('imgZoom02');
         elem02.parentNode.removeChild(elem02);
         iconZoom.className = 'sprite-zoom icons-menu';
         countZoom = 1;
