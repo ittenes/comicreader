@@ -1,4 +1,3 @@
-let zoom = 0;
 const createComicLittle = () => {
   document.getElementById('pages').innerHTML =
     `<div
@@ -32,8 +31,8 @@ const createComicBig = () => {
           index = `0${index}`;
         }
 
-        return `<div id=bg${index} class="carousel-cell">
-            <img src=${element} alt="página ${index}" />
+        return `<div id=bg${index} class="carousel-cell"> 
+            <img  class="new-size-zoom0" src=${element} alt="página ${index}" />
           </div>`;
       })
       .join('');
@@ -60,7 +59,7 @@ window.onload = () => {
   let iconZoom = document.getElementById('icon-zoom');
   let pagComicBig = 1;
   let countDouble = 1;
-  let countZoom = 1;
+  let countZoom = 0;
   let indexPage = 0;
 
   /////////////
@@ -72,9 +71,9 @@ window.onload = () => {
 
   let zoomImages = new ZoomImages();
 
-  document.oncontextmenu = function () {
-    return false;
-  };
+  // document.oncontextmenu = function () {
+  //   return false;
+  // };
 
   // COUNTER --- counter page of comic
   document.getElementById(
@@ -197,20 +196,19 @@ window.onload = () => {
   //  ZOOM CREATION FOR SIMPLE PAGE
   //TODO create zoom for Double Page
   btnZoom.addEventListener('click', () => {
-    if(zoom===1){
-      zoom=0;
-      document.querySelectorAll(".carousel-cell img").forEach((img) => {
-        //img.style.maxHeight = "90%";
-        img.style.width = "36%"
-      } );
-    }else{
-      zoom=1;
-      document.querySelectorAll(".carousel-cell img").forEach((img) => {
-        //img.style.maxHeight = "initial";
-        img.style.width = "150%"
+    if (countZoom === 1) {
+      countZoom = 0;
+      iconZoom.className = 'sprite-zoom icons-menu';
+      document.querySelectorAll('.new-size-zoom1 ').forEach((img) => {
+        img.className = 'new-size-zoom0';
+      });
+    } else {
+      countZoom = 1;
+      iconZoom.className = 'sprite-zoom icons-menu active-icon';
+      document.querySelectorAll('.carousel-main img').forEach((img) => {
+        img.className = 'new-size-zoom1';
       });
     }
-
 
     // let NewPagComicBig = pagComicBig + 1;
     // if (NewPagComicBig < 10) {

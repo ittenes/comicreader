@@ -55,10 +55,10 @@ body {
 .carousel-cell img {
   display: block;
   margin: auto;
-  /*max-width: 90%;
-  max-height: 100%;*/
-  width: 36%;
+  max-width: 90%;
+  max-height: 100%;
 }
+
 .carousel-cell .number {
   margin-top: -11px;
 }
@@ -349,7 +349,24 @@ body {
   }
 }
 
-.carousel-cell img{
+#comicBig .new-size-zoom1 {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: none;
+  width: 200%;
+  height: 2000px;
+  overflow: scroll;
+  z-index: 1000;
+}
+#comicBig .new-size-zoom0 {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 100%;
+}
+
+.carousel-cell img {
   transition: width 2s, height 2s;
   animation-timing-function: linear;
 }
