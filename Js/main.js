@@ -209,7 +209,7 @@ window.onload = () => {
       iconZoom.className = 'sprite-zoom icons-menu active-icon';
       comicBig.style.height = '2000px';
       document.querySelectorAll('.carousel-main img').forEach((img) => {
-        img.className = 'new-size-zoom1';
+        img.className += 'new-size-zoom1';
       });
     }
 
