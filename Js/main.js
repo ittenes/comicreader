@@ -188,7 +188,7 @@ window.onload = () => {
         flktyNav.resize();
         flktyNav.reposition();
       });
-      flktyMain.select(pagComicBig / 2);
+      flktyMain.select(Math.round(pagComicBig / 2) - 1);
       console.log('esto' + pagComicBig);
     } else {
       // TODO - Create the simple page in the same way than DOUBLE
