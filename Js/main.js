@@ -57,6 +57,7 @@ window.onload = () => {
   let iconPages = document.getElementById('icon-pages');
   let iconDouble = document.getElementById('icon-double');
   let iconZoom = document.getElementById('icon-zoom');
+  let comicBig = document.getElementById('comicBig');
   let pagComicBig = 1;
   let countDouble = 1;
   let countZoom = 0;
@@ -199,12 +200,14 @@ window.onload = () => {
     if (countZoom === 1) {
       countZoom = 0;
       iconZoom.className = 'sprite-zoom icons-menu';
+      comicBig.style.height = '';
       document.querySelectorAll('.new-size-zoom1 ').forEach((img) => {
         img.className = 'new-size-zoom0';
       });
     } else {
       countZoom = 1;
       iconZoom.className = 'sprite-zoom icons-menu active-icon';
+      comicBig.style.height = '2000px';
       document.querySelectorAll('.carousel-main img').forEach((img) => {
         img.className = 'new-size-zoom1';
       });

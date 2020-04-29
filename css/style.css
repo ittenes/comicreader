@@ -40,7 +40,7 @@ body {
 
 #comicBig .carousel-cell {
   display: flex;
-  /*overflow: hidden;*/
+  overflow: scroll;
 }
 
 /* cell number */
@@ -353,9 +353,8 @@ body {
   display: block;
   margin: auto;
   max-width: 90%;
-  max-height: none;
-  width: 200%;
-  height: 2000px;
+
+  height: auto;
   overflow: scroll;
   z-index: 1000;
 }
