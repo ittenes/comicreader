@@ -51,6 +51,7 @@ let resizeWindow = () => {
 };
 
 window.onload = () => {
+  document.querySelector(".title-comic").innerHTML = comicName;
   let pages = document.getElementById('pages');
   let btnPages = document.getElementById('btnPages');
   let btnDouble = document.getElementById('btnDouble');
@@ -72,9 +73,9 @@ window.onload = () => {
 
   let zoomImages = new ZoomImages();
 
-  // document.oncontextmenu = function () {
-  //   return false;
-  // };
+  document.oncontextmenu = function () {
+   return false;
+  };
 
   // COUNTER --- counter page of comic
   document.getElementById(

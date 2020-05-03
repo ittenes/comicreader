@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>ECC Comic Reader</title>
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/normilize.css" />
     <link
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <!-- Flickity HTML init -->
+
     <div
       id="comicBig"
       class="carousel carousel-main"
@@ -21,16 +21,15 @@
     ></div>
     <div id="zoom" class=""></div>
 
-    <!-- nav -->
+
 
     <div id="pages" class="pages-hidden"></div>
 
-    <!-- Buttons  -->
 
     <div class="menu">
       <div id="counter" class="item no-show-tablet no-show-mobile">
         <div id="counterNumber" class="counter">
-          Pagnia 1 de 24
+         
         </div>
       </div>
       <div id="btnPages" class="item">
@@ -44,7 +43,7 @@
       </div>
       <div class="item title">
         <span class="title-comic">
-          NOMBRE DEL COMIC ASFAV ADVAD F AF ASDF
+         
         </span>
       </div>
       <div class="item">
@@ -58,9 +57,11 @@
       </div>
     </div>
 
-    <script src="./img/batman/data.js"></script>
+    <script>
+        let c = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+        document.write('<script src="./img/' + c + '/data.js"></' + 'script>');
+    </script>
     <script src="./js/zoom.js"></script>
-
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="./js/main.js"></script>
   </body>

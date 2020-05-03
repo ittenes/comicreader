@@ -40,7 +40,6 @@ body {
 
 #comicBig .carousel-cell {
   display: flex;
-  overflow: scroll;
 }
 
 /* cell number */
